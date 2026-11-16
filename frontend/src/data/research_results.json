@@ -1,0 +1,80 @@
+{
+  "source": {
+    "name": "Human acetylcholinesterase Dataset from ChEMBL",
+    "publisher": "Gauravan on Kaggle",
+    "url": "https://www.kaggle.com/datasets/gauravan/human-acetylcholinesterase-dataset-from-chembl",
+    "original_source": "ChEMBL target CHEMBL220 \u00b7 Homo sapiens",
+    "retrieved": "2026-11-16",
+    "license": "Unknown on Kaggle; raw files are not redistributed"
+  },
+  "curation": {
+    "raw_records": 15542,
+    "exact_ic50_nM_with_smiles": 6244,
+    "binding_assay_unflagged_positive_records": 5705,
+    "curated_records": 5196,
+    "unique_compounds": 4483,
+    "unique_scaffolds": 1953,
+    "active_records": 2796,
+    "inactive_records": 2400,
+    "threshold": "pIC50 \u2265 6; IC50 \u2264 1 \u03bcM"
+  },
+  "validation": {
+    "split": "Bemis\u2013Murcko scaffold-group holdout",
+    "train_n": 4090,
+    "test_n": 1106,
+    "seed": 42,
+    "tuning": "5-fold GroupKFold grid search on training data; average precision selection",
+    "models": {
+      "RandomForest": {
+        "best_params": {
+          "max_depth": null,
+          "min_samples_leaf": 3,
+          "n_estimators": 100
+        },
+        "accuracy": 0.8119349005424955,
+        "precision": 0.8584558823529411,
+        "recall": 0.7809364548494984,
+        "f1": 0.8178633975481612,
+        "roc_auc": 0.8978385958444157,
+        "pr_auc": 0.9070827309487393,
+        "confusion_matrix": [
+          [
+            431,
+            77
+          ],
+          [
+            131,
+            467
+          ]
+        ],
+        "train_n": 4090,
+        "test_n": 1106
+      },
+      "SVM": {
+        "best_params": {
+          "svc__C": 1,
+          "svc__kernel": "rbf"
+        },
+        "accuracy": 0.8019891500904159,
+        "precision": 0.807131280388979,
+        "recall": 0.8327759197324415,
+        "f1": 0.8197530864197531,
+        "roc_auc": 0.876091235878124,
+        "pr_auc": 0.8842687966356477,
+        "confusion_matrix": [
+          [
+            389,
+            119
+          ],
+          [
+            100,
+            498
+          ]
+        ],
+        "train_n": 4090,
+        "test_n": 1106
+      }
+    }
+  },
+  "caveat": "Single scaffold-group holdout evaluation; estimates depend on this dataset, curation policy and split. Predictions are hypotheses, not therapeutic efficacy evidence."
+}
