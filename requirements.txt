@@ -1,0 +1,7 @@
+pandas>=2.2
+requests>=2.32
+rdkit>=2024.3
+scikit-learn>=1.5
+matplotlib>=3.9
+joblib>=1.4
+# Optional docking tools: vina, meeko, openbabel, pymol (install separately; see docs/DOCKING.md)

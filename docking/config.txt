@@ -1,0 +1,9 @@
+# Example only: fill after receptor and bound ligand preparation; no validated box is asserted.
+receptor = 4ey7_receptor.pdbqt
+center_x = TODO
+center_y = TODO
+center_z = TODO
+size_x = TODO
+size_y = TODO
+size_z = TODO
+exhaustiveness = 16
